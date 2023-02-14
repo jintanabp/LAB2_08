@@ -52,7 +52,7 @@ typedef struct Data
 }data;
 data buffer[10];
 
-uint16_t av_vol , av_temp ;
+uint16_t av_vol ,av_temp ;
 float Real_Vol;
 float Real_Temp;
 /* USER CODE END PV */
