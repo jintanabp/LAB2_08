@@ -1064,7 +1064,7 @@ int main(void)
  8000c6a:	4a10      	ldr	r2, [pc, #64]	; (8000cac <main+0x164>)
  8000c6c:	6013      	str	r3, [r2, #0]
 
-		HAL_Delay(1000);
+		HAL_Delay(1000) ;
  8000c6e:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  8000c72:	f000 fb8d 	bl	8001390 <HAL_Delay>
 		for (uint16_t i = 0; i < 10; i++)
