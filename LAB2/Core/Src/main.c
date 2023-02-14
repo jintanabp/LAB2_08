@@ -137,6 +137,8 @@ int main(void)
 		Real_Vol = (5.0/2800)*av_vol*1000 ;
 		Real_Temp = ((22.0/883)*av_temp) + 273 ;
 
+		HAL_Delay(1000);
+
   }
   /* USER CODE END 3 */
 }
