@@ -22,11 +22,12 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+// จินตนา 64340500008
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
+// จินตนา 64340500008
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -45,6 +46,9 @@ DMA_HandleTypeDef hdma_adc1;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
+
+
+
 typedef struct Data
 {
 		uint16_t Vol;
@@ -124,8 +128,8 @@ int main(void)
 			} else if (i == 9) {
 				sum_vol = sum_vol + buffer[i].Vol;
 				sum_temp = sum_temp + buffer[i].Temp;
-				av_vol = sum_vol / 10;
-				av_temp = sum_temp / 10;
+				av_vol = sum_vol /10;
+				av_temp = sum_temp /10;
 
 			} else {
 				sum_vol = sum_vol + buffer[i].Vol;
@@ -134,8 +138,9 @@ int main(void)
 
 		}
 
-		Real_Vol = (5.0/2800)*av_vol*1000 ;
-		Real_Temp = ((22.0/883)*av_temp) + 273 ;
+		Real_Vol = ((av_vol*3.3/4095) *2) * 1000 ;
+		//Real_Temp = ( ( Real_Vol - (0.76*1000) ) / 2.5 ) +25 ;
+		Real_Temp = ((((av_temp*3.3/4095) - 0.76)/0.0025) + 25 )+273 ;
 
 		HAL_Delay(1000) ;
 
